@@ -8,7 +8,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-2.5 font-semibold tracking-tight">
           <span
             aria-hidden
-            className="flex h-8 w-8 items-center justify-center rounded-md bg-gold font-bold text-gold-ink"
+            className="flex h-8 w-8 items-center justify-center rounded-md bg-blue font-bold text-white"
           >
             Z
           </span>
@@ -26,7 +26,7 @@ export function SiteHeader() {
           ))}
           <Link
             href="/download"
-            className="ml-2 hidden rounded-md bg-gold px-4 py-2 text-sm font-semibold text-gold-ink transition-colors hover:bg-gold/90 sm:block"
+            className="ml-2 hidden rounded-md bg-blue px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-hover sm:block"
           >
             Download
           </Link>

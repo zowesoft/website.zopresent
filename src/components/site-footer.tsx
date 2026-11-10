@@ -28,7 +28,7 @@ export function SiteFooter() {
             href={site.repo}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gold transition-colors hover:text-gold/80"
+            className="text-blue transition-colors hover:text-blue-hover"
           >
             GitHub
           </a>

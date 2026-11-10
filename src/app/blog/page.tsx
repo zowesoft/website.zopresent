@@ -20,7 +20,7 @@ export default function BlogPage() {
           <Link
             key={p.slug}
             href={`/blog/${p.slug}`}
-            className="block rounded-xl border border-border bg-surface p-6 transition-colors hover:border-gold-dim"
+            className="block rounded-xl border border-border bg-surface p-6 transition-colors hover:border-blue"
           >
             <time dateTime={p.date} className="text-sm text-muted">
               {new Date(p.date).toLocaleDateString("en-US", {
@@ -33,7 +33,7 @@ export default function BlogPage() {
             <p className="mt-2 text-sm leading-relaxed text-muted">
               {p.excerpt}
             </p>
-            <span className="mt-3 inline-block text-sm font-medium text-gold">
+            <span className="mt-3 inline-block text-sm font-medium text-blue">
               Read more →
             </span>
           </Link>

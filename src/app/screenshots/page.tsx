@@ -33,7 +33,7 @@ export default function ScreenshotsPage() {
               className="flex aspect-video items-center justify-center rounded-xl border border-dashed border-border bg-surface"
             >
               <div className="text-center">
-                <p className="text-sm font-medium text-gold">
+                <p className="text-sm font-medium text-amber">
                   {s.title}
                 </p>
                 <p className="mt-1 text-xs text-muted">screenshot coming soon</p>
@@ -54,7 +54,7 @@ export default function ScreenshotsPage() {
           href="https://github.com/zowesoft/zowe-worship"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gold hover:text-gold/80"
+          className="text-blue hover:text-blue-hover"
         >
           GitHub
         </a>{" "}

@@ -8,14 +8,14 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent"
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber to-transparent"
         />
         <div className="mx-auto max-w-6xl px-4 pb-16 pt-20 text-center sm:px-6 sm:pt-28">
-          <p className="text-sm font-medium uppercase tracking-widest text-gold">
+          <p className="text-sm font-medium uppercase tracking-widest text-amber">
             {site.org} presents
           </p>
           <h1 className="mx-auto mt-4 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">
-            Scripture First. <span className="text-gold">Always.</span>
+            Scripture First. <span className="text-amber">Always.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted">
             One operator runs scripture, songs, media and themes from a studio
@@ -25,7 +25,7 @@ export default function HomePage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/download"
-              className="rounded-lg bg-gold px-6 py-3 font-semibold text-gold-ink transition-colors hover:bg-gold/90"
+              className="rounded-lg bg-blue px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-hover"
             >
               Download {site.releaseTag}
             </Link>
@@ -53,7 +53,7 @@ export default function HomePage() {
           {features.map((f) => (
             <div
               key={f.title}
-              className="rounded-xl border border-border bg-surface p-6 transition-colors hover:border-gold-dim"
+              className="rounded-xl border border-border bg-surface p-6 transition-colors hover:border-blue"
             >
               <h3 className="font-semibold">{f.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">{f.body}</p>
@@ -83,7 +83,7 @@ export default function HomePage() {
             },
           ].map((s) => (
             <div key={s.label} className="text-center sm:text-left">
-              <p className="text-4xl font-bold text-gold">{s.stat}</p>
+              <p className="text-4xl font-bold text-amber">{s.stat}</p>
               <p className="mt-2 font-medium">{s.label}</p>
               <p className="mt-2 text-sm leading-relaxed text-muted">{s.body}</p>
             </div>
@@ -103,7 +103,7 @@ export default function HomePage() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/download"
-            className="rounded-lg bg-gold px-6 py-3 font-semibold text-gold-ink transition-colors hover:bg-gold/90"
+            className="rounded-lg bg-blue px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-hover"
           >
             Get {site.releaseTag}
           </Link>

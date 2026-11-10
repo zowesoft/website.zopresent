@@ -2,16 +2,21 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Zowe Worship palette — deep night blue with a liturgical gold accent */
-  --color-bg: #0b0d12;
-  --color-surface: #14171f;
-  --color-surface-2: #1b1f2a;
-  --color-border: #262b38;
-  --color-ink: #e9e7e1;
-  --color-muted: #9aa0ad;
-  --color-gold: #e0b44a;
-  --color-gold-dim: #a8862f;
-  --color-gold-ink: #1a1406;
+  /* Zowe Worship palette — mirrored from the desktop app's
+     frontend/src/styles/tokens.css so site and app share one brand.
+     blue = interactive (buttons, links, hover borders),
+     amber = decorative highlight (accents, stats, labels). */
+  --color-bg: #080f1c;
+  --color-surface: #0f1a2b;
+  --color-surface-2: #17253b;
+  --color-selected: #192c50;
+  --color-border: #24334a;
+  --color-ink: #f3f6fc;
+  --color-muted: #a3b2ca;
+  --color-blue: #4778ff;
+  --color-blue-hover: #5b88ff;
+  --color-amber: #f4bd4f;
+  --color-amber-dim: #a8862f;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -28,13 +33,13 @@ body {
   --tw-prose-body: var(--color-ink);
   --tw-prose-headings: var(--color-ink);
   --tw-prose-lead: var(--color-muted);
-  --tw-prose-links: var(--color-gold);
+  --tw-prose-links: var(--color-blue);
   --tw-prose-bold: var(--color-ink);
   --tw-prose-counters: var(--color-muted);
-  --tw-prose-bullets: var(--color-gold-dim);
+  --tw-prose-bullets: var(--color-amber-dim);
   --tw-prose-hr: var(--color-border);
   --tw-prose-quotes: var(--color-ink);
-  --tw-prose-quote-borders: var(--color-gold-dim);
+  --tw-prose-quote-borders: var(--color-amber-dim);
   --tw-prose-captions: var(--color-muted);
   --tw-prose-code: var(--color-ink);
   --tw-prose-pre-bg: var(--color-surface-2);

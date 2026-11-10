@@ -22,7 +22,7 @@ export default function DocsPage() {
           <Link
             key={d.slug}
             href={`/docs/${d.slug}`}
-            className="rounded-xl border border-border bg-surface p-6 transition-colors hover:border-gold-dim"
+            className="rounded-xl border border-border bg-surface p-6 transition-colors hover:border-blue"
           >
             <h2 className="font-semibold">{d.title}</h2>
             <p className="mt-2 text-sm leading-relaxed text-muted">

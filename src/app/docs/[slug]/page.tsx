@@ -50,7 +50,7 @@ export default async function DocPage(props: PageProps<"/docs/[slug]">) {
               <li key={d.slug}>
                 <Link
                   href={`/docs/${d.slug}`}
-                  className="block rounded-lg border border-border bg-surface px-4 py-3 text-sm transition-colors hover:border-gold-dim"
+                  className="block rounded-lg border border-border bg-surface px-4 py-3 text-sm transition-colors hover:border-blue"
                 >
                   <span className="font-medium">{d.title}</span>
                   <span className="mt-1 block text-muted">{d.summary}</span>

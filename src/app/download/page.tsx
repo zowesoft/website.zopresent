@@ -35,7 +35,7 @@ export default function DownloadPage() {
             </div>
             <a
               href={d.href}
-              className="shrink-0 rounded-lg bg-gold px-5 py-2.5 text-center text-sm font-semibold text-gold-ink transition-colors hover:bg-gold/90"
+              className="shrink-0 rounded-lg bg-blue px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-blue-hover"
             >
               Download
             </a>
@@ -62,7 +62,7 @@ export default function DownloadPage() {
             importer — see the{" "}
             <Link
               href="/docs/bible-translations"
-              className="text-gold hover:text-gold/80"
+              className="text-blue hover:text-blue-hover"
             >
               Bible translations guide
             </Link>
@@ -78,7 +78,7 @@ export default function DownloadPage() {
               href={site.releasesUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gold hover:text-gold/80"
+              className="text-blue hover:text-blue-hover"
             >
               GitHub releases page
             </a>
