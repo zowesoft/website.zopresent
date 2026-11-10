@@ -1,69 +1,120 @@
-import Image from "next/image";
+import Link from "next/link";
+import { features, site } from "@/lib/content";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+        <div className="mx-auto max-w-6xl px-4 pb-16 pt-20 text-center sm:px-6 sm:pt-28">
+          <p className="text-sm font-medium uppercase tracking-widest text-gold">
+            {site.org} presents
+          </p>
+          <h1 className="mx-auto mt-4 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">
+            Scripture First. <span className="text-gold">Always.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+            One operator runs scripture, songs, media and themes from a studio
+            window while the audience display shows exactly what is on air.
+            Fully offline, including AI scripture detection.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/download"
+              className="rounded-lg bg-gold px-6 py-3 font-semibold text-gold-ink transition-colors hover:bg-gold/90"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              Download {site.releaseTag}
+            </Link>
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href={site.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-border px-6 py-3 font-semibold text-ink transition-colors hover:bg-surface-2"
             >
-              Learning
-            </a>{" "}
-            center.
+              View on GitHub
+            </a>
+          </div>
+          <p className="mt-4 text-sm text-muted">
+            Windows · macOS · Linux — free, no account, no internet required
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Features */}
+      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
+        <h2 className="text-center text-3xl font-bold tracking-tight">
+          Built for the service, not the internet
+        </h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((f) => (
+            <div
+              key={f.title}
+              className="rounded-xl border border-border bg-surface p-6 transition-colors hover:border-gold-dim"
+            >
+              <h3 className="font-semibold">{f.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{f.body}</p>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Offline highlight */}
+      <section className="border-y border-border bg-surface">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:grid-cols-3 sm:px-6">
+          {[
+            {
+              stat: "100%",
+              label: "Offline",
+              body: "Detection, lookup and playback all run on-device. No audio or text ever leaves the machine.",
+            },
+            {
+              stat: "<50 ms",
+              label: "Reference lookups",
+              body: "Verse references answer in single-digit milliseconds, enforced by a benchmark in CI.",
+            },
+            {
+              stat: "0",
+              label: "Bundled translations",
+              body: "You install the texts you're licensed to use — nothing copyrighted ships with the app.",
+            },
+          ].map((s) => (
+            <div key={s.label} className="text-center sm:text-left">
+              <p className="text-4xl font-bold text-gold">{s.stat}</p>
+              <p className="mt-2 font-medium">{s.label}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="mx-auto max-w-6xl px-4 py-20 text-center sm:px-6">
+        <h2 className="text-3xl font-bold tracking-tight">
+          Ready for Sunday?
+        </h2>
+        <p className="mx-auto mt-4 max-w-xl text-muted">
+          Grab the package for your platform and run your first service in
+          minutes. Five packages, one tag, built on native runners.
+        </p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href="/download"
+            className="rounded-lg bg-gold px-6 py-3 font-semibold text-gold-ink transition-colors hover:bg-gold/90"
+          >
+            Get {site.releaseTag}
+          </Link>
+          <Link
+            href="/docs/getting-started"
+            className="rounded-lg border border-border px-6 py-3 font-semibold text-ink transition-colors hover:bg-surface-2"
+          >
+            Read the docs
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }
