@@ -352,6 +352,8 @@ export type Screenshot = {
   slug: string;
   title: string;
   description: string;
+  width: number;
+  height: number;
 };
 
 export const screenshots: Screenshot[] = [
@@ -359,25 +361,35 @@ export const screenshots: Screenshot[] = [
     slug: "studio",
     title: "Studio window",
     description: "The operator's view: service order, preview, and the live item side by side.",
+    width: 1920,
+    height: 974,
   },
   {
     slug: "audience-display",
     title: "Audience display",
     description: "The separate output window — exactly what is on air, nothing else.",
+    width: 1920,
+    height: 1080,
   },
   {
     slug: "detection",
     title: "Detection card",
     description: "On-device detection queuing a scripture reference with explicit confidence.",
+    width: 429,
+    height: 554,
   },
   {
     slug: "theme-editor",
     title: "Theme editor",
     description: "Typography, colours and layout with live preview before anything goes on air.",
+    width: 1388,
+    height: 934,
   },
   {
     slug: "media-player",
     title: "Media transport",
     description: "Play, pause, seek and volume for audio and video, with a background picture.",
+    width: 1086,
+    height: 498,
   },
 ];
