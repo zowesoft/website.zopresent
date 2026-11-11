@@ -8,20 +8,7 @@ export const metadata: Metadata = {
     "A look at Zowe Worship: the studio window, audience display, detection card, theme editor and media transport.",
 };
 
-// Wide captures run the full column; the portrait detection card is shown
-// narrow and centred so it reads as the card it is.
-const layout: Record<string, { span?: string; img?: string }> = {
-  studio: { span: "sm:col-span-2" },
-  "media-player": { span: "sm:col-span-2" },
-  detection: { span: "sm:col-span-2", img: "mx-auto max-w-sm" },
-};
-
-const order = ["studio", "audience-display", "theme-editor", "media-player", "detection"];
-
 export default function ScreenshotsPage() {
-  const bySlug = new Map(screenshots.map((s) => [s.slug, s]));
-  const ordered = order.map((slug) => bySlug.get(slug)!).filter(Boolean);
-
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <h1 className="text-4xl font-bold tracking-tight">Screenshots</h1>
@@ -30,26 +17,28 @@ export default function ScreenshotsPage() {
         Every frame below is a real capture from the running app.
       </p>
 
-      <div className="mt-10 grid items-start gap-8 sm:grid-cols-2">
-        {ordered.map((s, i) => {
-          const l = layout[s.slug] ?? {};
-          return (
-            <figure key={s.slug} className={l.span ?? ""}>
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {screenshots.map((s, i) => (
+          <figure
+            key={s.slug}
+            className={i === 0 ? "sm:col-span-2 lg:col-span-2" : ""}
+          >
+            <div className="flex aspect-video items-center justify-center overflow-hidden rounded-xl border border-border bg-surface p-2">
               <Image
                 src={`/screenshots/${s.slug}.png`}
                 alt={`${s.title} — ${s.description}`}
                 width={s.width}
                 height={s.height}
                 priority={i === 0}
-                className={`h-auto w-full rounded-xl border border-border bg-surface ${l.img ?? ""}`}
+                className="h-full w-full object-contain"
               />
-              <figcaption className="mt-3">
-                <p className="font-medium">{s.title}</p>
-                <p className="mt-1 text-sm text-muted">{s.description}</p>
-              </figcaption>
-            </figure>
-          );
-        })}
+            </div>
+            <figcaption className="mt-3">
+              <p className="font-medium">{s.title}</p>
+              <p className="mt-1 text-sm text-muted">{s.description}</p>
+            </figcaption>
+          </figure>
+        ))}
       </div>
 
       <p className="mt-10 rounded-lg border border-border bg-surface p-4 text-sm text-muted">
