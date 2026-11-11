@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://zowe-worship.vercel.app"),
   title: {
     default: `${site.name} — ${site.tagline}`,
     template: `%s · ${site.name}`,
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
+    url: "https://zowe-worship.vercel.app",
     siteName: site.name,
     type: "website",
   },
