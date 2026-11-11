@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { docs } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -35,7 +36,7 @@ export default async function DocPage(props: PageProps<"/docs/[slug]">) {
       </nav>
 
       <article className="prose-zowe prose-lg mt-8 max-w-none">
-        <ReactMarkdown>{doc.body}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{doc.body}</ReactMarkdown>
       </article>
 
       {/* On-page index of the other guides */}

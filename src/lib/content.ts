@@ -125,8 +125,8 @@ Packages are currently **unsigned** — SmartScreen (Windows) or Gatekeeper
    display is a separate window you can move to the projector.
 2. Add items to the service order: scripture references, songs from the
    library, media, or custom items.
-3. Select an item and press **Ctrl+L** to preview it in the studio, then
-   **F9** or **F12** to send it to the audience display.
+3. Select an item to preview it in the studio, then press **Ctrl+L** to send
+   it live to the audience display.
 4. Anything already projected can be restored from the decision history —
    a misstep never leaves the screen blank.
 
@@ -191,10 +191,15 @@ for full-text search).`,
 
 | Key | Action |
 |---|---|
-| \`Ctrl+L\` | Preview the selected item in the studio window |
-| \`F8\` | Listen — start on-device speech detection |
-| \`F9\` | Send the previewed item live to the audience display |
-| \`F12\` | Advance / transport for the live item |
+| \`Ctrl+L\` | Send the previewed item live to the audience display |
+| \`Ctrl+F\` | Focus the Bible search box |
+| \`F8\` | Toggle listening — on-device speech detection |
+| \`F9\` | Pause / resume auto-projection |
+| \`F12\` | Emergency disable detection (live output preserved) |
+| \`←\` / \`→\` | Previous / next schedule item |
+
+These are the defaults. Every action can be rebound in **Settings →
+Shortcuts**, and an open studio picks up the change without a restart.
 
 ## Design principles
 
@@ -339,7 +344,7 @@ The v0.1.0 asset sizes tell the story — the macOS zip went from 6.2 MB to 114.
 
 ## What's next
 
-Audience-display reconnect and mixed-DPI recovery hardening, the media transport UI, and semantic scripture search. Follow along on [GitHub](${site.repo}).`,
+Audience-display reconnect and mixed-DPI recovery hardening, and semantic scripture search. Follow along on [GitHub](${site.repo}).`,
   },
 ];
 
