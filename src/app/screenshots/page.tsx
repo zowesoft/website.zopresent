@@ -5,7 +5,7 @@ import { screenshots } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Screenshots",
   description:
-    "A look at Zowe Worship: the studio window, audience display, detection card, theme editor and media transport.",
+    "A look at Zopresent: the studio window, audience display, detection card, theme editor and media transport.",
 };
 
 export default function ScreenshotsPage() {
@@ -42,10 +42,10 @@ export default function ScreenshotsPage() {
       </div>
 
       <p className="mt-10 rounded-lg border border-border bg-surface p-4 text-sm text-muted">
-        Want to see more? If you run Zowe Worship and capture the Songs
+        Want to see more? If you run Zopresent and capture the Songs
         workspace or the Service Order, open an issue on{" "}
         <a
-          href="https://github.com/zowesoft/zowe-worship"
+          href="https://github.com/zowesoft/zopresent"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue hover:text-blue-hover"

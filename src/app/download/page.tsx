@@ -5,7 +5,7 @@ import { downloads, site } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Download",
   description:
-    "Download Zowe Worship v0.1.0 for Windows, macOS or Linux. Five packages, fully offline, no account required.",
+    "Download Zopresent v0.1.0 for Windows, macOS or Linux. Five packages, fully offline, no account required.",
 };
 
 export default function DownloadPage() {

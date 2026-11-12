@@ -35,7 +35,7 @@ export default async function DocPage(props: PageProps<"/docs/[slug]">) {
         <span className="text-ink">{doc.title}</span>
       </nav>
 
-      <article className="prose-zowe prose-lg mt-8 max-w-none">
+      <article className="prose-zopresent prose-lg mt-8 max-w-none">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{doc.body}</ReactMarkdown>
       </article>
 

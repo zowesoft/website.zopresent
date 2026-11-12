@@ -34,7 +34,7 @@ export default async function PostPage(props: PageProps<"/blog/[slug]">) {
         <span className="text-ink">{post.title}</span>
       </nav>
 
-      <article className="prose-zowe prose-lg mt-8 max-w-none">
+      <article className="prose-zopresent prose-lg mt-8 max-w-none">
         <header>
           <time
             dateTime={post.date}

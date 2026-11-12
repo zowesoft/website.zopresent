@@ -2,16 +2,16 @@
 // so updating a version, size or feature here updates every page.
 
 export const site = {
-  name: "Zowe Worship",
+  name: "Zopresent",
   tagline: "Scripture First. Always.",
   description:
-    "Zowe Worship is a desktop app for worship services — one operator runs scripture, songs, media and themes from a studio window while the audience display shows exactly what is on air. Fully offline, including AI scripture detection.",
+    "Zopresent is a desktop app for worship services — one operator runs scripture, songs, media and themes from a studio window while the audience display shows exactly what is on air. Fully offline, including AI scripture detection.",
   org: "Zowesoft",
-  repo: "https://github.com/zowesoft/zowe-worship",
-  releaseTag: "v0.1.0",
-  releaseUrl: "https://github.com/zowesoft/zowe-worship/releases/tag/v0.1.0",
-  releasesUrl: "https://github.com/zowesoft/zowe-worship/releases",
-  latestUrl: "https://github.com/zowesoft/zowe-worship/releases/latest",
+  repo: "https://github.com/zowesoft/zopresent",
+  releaseTag: "v0.1.1",
+  releaseUrl: "https://github.com/zowesoft/zopresent/releases/tag/v0.1.1",
+  releasesUrl: "https://github.com/zowesoft/zopresent/releases",
+  latestUrl: "https://github.com/zowesoft/zopresent/releases/latest",
 };
 
 export const nav = [
@@ -53,7 +53,7 @@ export const downloads = [
     id: "windows",
     platform: "Windows",
     package: "NSIS installer",
-    file: "zowe-worship-amd64-installer.exe",
+    file: "zopresent-amd64-installer.exe",
     size: "115.4 MB",
     detail: "x86-64 · speech engine bundled",
   },
@@ -61,7 +61,7 @@ export const downloads = [
     id: "macos",
     platform: "macOS",
     package: ".app bundle (zip)",
-    file: "zowe-worship-macos.zip",
+    file: "zopresent-macos.zip",
     size: "114.2 MB",
     detail: "Universal · ad-hoc signed",
   },
@@ -69,7 +69,7 @@ export const downloads = [
     id: "deb",
     platform: "Linux (Debian/Ubuntu)",
     package: ".deb",
-    file: "zowe-worship.deb",
+    file: "zopresent.deb",
     size: "115.3 MB",
     detail: "GTK 4 + WebKitGTK 6.0",
   },
@@ -77,7 +77,7 @@ export const downloads = [
     id: "rpm",
     platform: "Linux (Fedora/RHEL)",
     package: ".rpm",
-    file: "zowe-worship.rpm",
+    file: "zopresent.rpm",
     size: "129.1 MB",
     detail: "GTK 4 + WebKitGTK 6.0",
   },
@@ -85,13 +85,13 @@ export const downloads = [
     id: "appimage",
     platform: "Linux (any distro)",
     package: "AppImage",
-    file: "zowe-worship-x86_64.AppImage",
+    file: "zopresent-x86_64.AppImage",
     size: "192.0 MB",
     detail: "x86-64 · engine included",
   },
 ].map((d) => ({
   ...d,
-  href: `https://github.com/zowesoft/zowe-worship/releases/download/${site.releaseTag}/${d.file}`,
+  href: `https://github.com/zowesoft/zopresent/releases/download/${site.releaseTag}/${d.file}`,
 }));
 
 export type Doc = {
@@ -121,7 +121,7 @@ Packages are currently **unsigned** — SmartScreen (Windows) or Gatekeeper
 
 ## Your first service
 
-1. Open Zowe Worship. The studio window is where you work; the audience
+1. Open Zopresent. The studio window is where you work; the audience
    display is a separate window you can move to the projector.
 2. Add items to the service order: scripture references, songs from the
    library, media, or custom items.
@@ -135,9 +135,9 @@ Packages are currently **unsigned** — SmartScreen (Windows) or Gatekeeper
 Per-user data (database, backups, installed translations, media library)
 follows the OS convention:
 
-- **Windows:** \`%LOCALAPPDATA%\\Zowesoft\\Zowe Worship\`
-- **Linux:** \`~/.local/share/Zowesoft/Zowe Worship\`
-- **macOS:** \`~/Library/Application Support/Zowesoft/Zowe Worship\`
+- **Windows:** \`%LOCALAPPDATA%\\Zowesoft\\Zopresent\`
+- **Linux:** \`~/.local/share/Zowesoft/Zopresent\`
+- **macOS:** \`~/Library/Application Support/Zowesoft/Zopresent\`
 
 The database is checksum-tracked with automatic backups, and the app
 refuses to open a database written by a newer build rather than corrupting
@@ -151,7 +151,7 @@ a second copy.`,
     body: `## Why nothing ships with the app
 
 Bible translations are copyrighted works and redistribution requires the
-publisher's permission. Zowe Worship deliberately bundles **no** Bible text,
+publisher's permission. Zopresent deliberately bundles **no** Bible text,
 so you install the copies you hold licenses for through the command-line
 importer.
 
@@ -292,7 +292,7 @@ planned.
 
 ## Where is my data?
 
-Under the OS per-user convention — \`%LOCALAPPDATA%\\Zowesoft\\Zowe Worship\`
+Under the OS per-user convention — \`%LOCALAPPDATA%\\Zowesoft\\Zopresent\`
 on Windows. Backups are automatic, and restoring a backup rolls back into
 the running app.`,
   },
@@ -308,12 +308,14 @@ export type Post = {
 
 export const posts: Post[] = [
   {
-    slug: "zowe-worship-v0-1-0",
-    title: "Zowe Worship v0.1.0",
+    slug: "zopresent-v0-1-0",
+    title: "Zopresent v0.1.0",
     date: "2026-11-10",
     excerpt:
       "Our first tagged release: five packages built on native GitHub runners, the offline speech engine bundled everywhere, and what we're doing next.",
-    body: `Today we're tagging **v0.1.0**, the first public release of Zowe Worship — scripture-first worship presentation for a single operator and one audience display.
+    body: `*This release shipped under the name Zowe Worship; the product is now Zopresent.*
+
+Today we're tagging **v0.1.0**, the first public release of Zopresent — scripture-first worship presentation for a single operator and one audience display.
 
 ## What ships
 
@@ -330,7 +332,7 @@ Every package carries the full feature set: service order and live presentation 
 The release pipeline bundles the on-device speech engine into all five packages, so detection works on first run with no download:
 
 - the macOS \`.app\` carries \`Contents/MacOS/engines\`
-- deb/rpm install it to \`/usr/local/lib/zowe-worship/engines\`
+- deb/rpm install it to \`/usr/local/lib/zopresent/engines\`
 - the AppImage embeds \`usr/bin/engines\`
 - the Windows installer already shipped it
 

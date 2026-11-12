@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Zowe Worship palette — mirrored from the desktop app's
+  /* Zopresent palette — mirrored from the desktop app's
      frontend/src/styles/tokens.css so site and app share one brand.
      blue = interactive (buttons, links, hover borders),
      amber = decorative highlight (accents, stats, labels). */
@@ -29,7 +29,7 @@ body {
 }
 
 /* Prose styling for docs/blog markdown on the dark surface */
-.prose-zowe {
+.prose-zopresent {
   --tw-prose-body: var(--color-ink);
   --tw-prose-headings: var(--color-ink);
   --tw-prose-lead: var(--color-muted);

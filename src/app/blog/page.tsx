@@ -4,7 +4,7 @@ import { posts } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Release notes and news from the Zowe Worship project.",
+  description: "Release notes and news from the Zopresent project.",
 };
 
 export default function BlogPage() {

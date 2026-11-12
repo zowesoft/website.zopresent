@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { docs, nav, posts } from "@/lib/content";
 
-const base = "https://zowe-worship.vercel.app";
+const base = "https://zopresent.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://zowe-worship.vercel.app/sitemap.xml",
-    host: "https://zowe-worship.vercel.app",
+    sitemap: "https://zopresent.vercel.app/sitemap.xml",
+    host: "https://zopresent.vercel.app",
   };
 }
