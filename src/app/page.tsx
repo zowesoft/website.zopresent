@@ -124,6 +124,51 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      {/* Support */}
+      <section className="border-t border-border bg-surface">
+        <div className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6">
+          <p className="text-sm font-medium uppercase tracking-widest text-amber">
+            Support the project
+          </p>
+          <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+            Keep the lights on
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted">
+            Zopresent is free for your church to use, and a handful of sponsors
+            covers what it takes to keep it going — the domain today, the
+            certificates that sign the builds one day. If it serves you well,
+            you can keep it going too.
+          </p>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://github.com/sponsors/theJohnCode"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 rounded-lg border border-border bg-surface-2 px-6 py-3 font-semibold text-ink transition-colors hover:border-blue hover:text-ink"
+            >
+              <svg
+                aria-hidden
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="#F472B6"
+              >
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 4.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+              Sponsor on GitHub
+            </a>
+            <a
+              href="https://buymeacoffee.com/thejohncode"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 rounded-lg border border-border px-6 py-3 font-semibold text-ink transition-colors hover:bg-surface-2"
+            >
+              Buy me a coffee
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

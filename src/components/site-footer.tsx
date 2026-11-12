@@ -42,6 +42,25 @@ export function SiteFooter() {
           >
             GitHub
           </a>
+          <p className="mt-5 font-medium text-ink">Support development</p>
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <a
+              href="https://github.com/sponsors/theJohnCode"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-full border border-border bg-surface-2 px-3.5 py-1.5 text-xs font-medium text-ink transition-colors hover:border-blue"
+            >
+              GitHub Sponsors
+            </a>
+            <a
+              href="https://buymeacoffee.com/thejohncode"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-full border border-border bg-surface-2 px-3.5 py-1.5 text-xs font-medium text-ink transition-colors hover:border-blue"
+            >
+              Buy me a coffee
+            </a>
+          </div>
           <p className="mt-3 leading-relaxed">
             Copyright © 2026 {site.org}. All rights reserved. Source-available
             licence; see the LICENSE file in the repository.
