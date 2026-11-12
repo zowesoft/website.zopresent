@@ -54,7 +54,7 @@ export const downloads = [
     platform: "Windows",
     package: "NSIS installer",
     file: "zopresent-amd64-installer.exe",
-    size: "115.4 MB",
+    size: "115.9 MB",
     detail: "x86-64 · speech engine bundled",
   },
   {
@@ -62,7 +62,7 @@ export const downloads = [
     platform: "macOS",
     package: ".app bundle (zip)",
     file: "zopresent-macos.zip",
-    size: "114.2 MB",
+    size: "115.4 MB",
     detail: "Universal · ad-hoc signed",
   },
   {
@@ -70,7 +70,7 @@ export const downloads = [
     platform: "Linux (Debian/Ubuntu)",
     package: ".deb",
     file: "zopresent.deb",
-    size: "115.3 MB",
+    size: "116.6 MB",
     detail: "GTK 4 + WebKitGTK 6.0",
   },
   {
@@ -78,7 +78,7 @@ export const downloads = [
     platform: "Linux (Fedora/RHEL)",
     package: ".rpm",
     file: "zopresent.rpm",
-    size: "129.1 MB",
+    size: "133.8 MB",
     detail: "GTK 4 + WebKitGTK 6.0",
   },
   {
@@ -86,7 +86,7 @@ export const downloads = [
     platform: "Linux (any distro)",
     package: "AppImage",
     file: "zopresent-x86_64.AppImage",
-    size: "192.0 MB",
+    size: "193.2 MB",
     detail: "x86-64 · engine included",
   },
 ].map((d) => ({
