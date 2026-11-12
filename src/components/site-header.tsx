@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { nav, site } from "@/lib/content";
 
 export function SiteHeader() {
@@ -15,12 +16,14 @@ export function SiteHeader() {
           className="flex items-center gap-2.5 font-semibold tracking-tight"
           onClick={() => setOpen(false)}
         >
-          <span
-            aria-hidden
-            className="flex h-8 w-8 items-center justify-center rounded-md bg-blue font-bold text-white"
-          >
-            Z
-          </span>
+          <Image
+            src="/brand/zopresent.png"
+            alt=""
+            width={32}
+            height={32}
+            priority
+            className="h-8 w-8 rounded-[9px] ring-1 ring-white/10"
+          />
           <span>{site.name}</span>
         </Link>
 

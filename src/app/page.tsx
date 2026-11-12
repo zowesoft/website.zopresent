@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { features, site } from "@/lib/content";
 
 export default function HomePage() {
@@ -10,8 +11,16 @@ export default function HomePage() {
           aria-hidden
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber to-transparent"
         />
-        <div className="mx-auto max-w-6xl px-4 pb-16 pt-20 text-center sm:px-6 sm:pt-28">
-          <p className="text-sm font-medium uppercase tracking-widest text-amber">
+        <div className="mx-auto max-w-6xl px-4 pb-16 pt-16 text-center sm:px-6 sm:pt-24">
+          <Image
+            src="/brand/zopresent.png"
+            alt="Zopresent"
+            width={112}
+            height={112}
+            priority
+            className="mx-auto h-24 w-24 drop-shadow-[0_0_44px_rgba(71,120,255,0.4)] sm:h-28 sm:w-28"
+          />
+          <p className="mt-6 text-sm font-medium uppercase tracking-widest text-amber">
             {site.org} presents
           </p>
           <h1 className="mx-auto mt-4 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">
