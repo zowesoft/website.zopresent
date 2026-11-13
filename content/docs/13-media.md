@@ -41,6 +41,26 @@ while you control playback from the studio. With only one screen, the
 **media editor doubles as the player**, so you can rehearse a service on a
 laptop and still see and hear exactly what the congregation would.
 
+## Media playlists
+
+A **media playlist** is an ordered list of media assets that plays as one
+run: start it and Zopresent projects the first clip, then **advances
+automatically** to the next each time a clip ends. The studio's transport
+only hears "media ended" when the *whole run* is over, because the next clip
+has already started the moment the previous one finished — no dead air
+between clips.
+
+Two properties make a run safe to operate live:
+
+- **Snapshot at start.** The run is a snapshot of the playlist as it
+  started; editing the list mid-run changes the stored copy, never the clip
+  the room is watching.
+- **Files are verified.** Starting a run checks every referenced file
+  exists on disk first, and names the missing one if not.
+
+Use playlists for pre-service loops, announcement reels, or any sequence you
+want hands-free.
+
 ## On air
 
 Media items enter the service order like everything else: preview them,

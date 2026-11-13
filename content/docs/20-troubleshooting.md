@@ -14,12 +14,13 @@ The queue stays empty even though someone is reading scripture aloud.
 1. **Is the detector listening?** Press **F8** — or check for the Listen
    state in the studio toolbar. `F12` disables detection entirely; check
    **Settings → Detection** shows *Enabled*.
-2. **Is the right input the OS default?** Zopresent transcribes the default
-   system input device. Set the pulpit mic or desk feed as default in your
-   OS sound settings — see [configuring audio input](/docs/audio-input).
-3. **Is the feed clean?** Room mics pick up everything; a mic at the back of
-   a hall will struggle. Prefer a mixing-desk feed or a mic close to the
-   preacher.
+2. **Is the right input selected in the app?** Pick the input device in the
+   detection panel — Zopresent reads the list straight from your audio
+   stack, no OS settings involved. Prefer a desk feed or a mic close to the
+   preacher — see [configuring audio input](/docs/audio-input).
+3. **Is the feed alive?** Watch the level meter while someone speaks. If the
+   panel warns that the microphone has gone quiet, the device is muted,
+   unplugged, or taken over by another program.
 4. **Engine missing?** Release packages bundle the Moonshine engine, so this
    only happens with from-source builds. The app detects a missing engine
    and offers the download rather than failing silently — see

@@ -92,13 +92,26 @@ Detections do not appear on screen when detected. They wait in the panel:
 
 ## Auto-projection, and why it is off
 
-Auto-projection exists, but it is **off by default** and gated behind
-operator-configured safety checks. The bar it must clear before Zopresent
-would ever put an unapproved verse on the wall is deliberately strict:
-at least **99% precision** on a labelled evaluation set — meaning fewer than
-one wrong verse per hundred detections, measured, not assumed. When armed,
-`F9` pauses it and `F12` still kills everything. Contextual references are
-exempt by design: they always wait for you.
+Auto-projection exists, but it is **off by default**. When armed — the
+studio status calls it *Hybrid, gates armed* — a candidate is only projected
+if it passes an explicit safety checklist. Every gate is named, and the ones
+that block a candidate stay in your queue with the reason spelled out:
+
+| Gate | Requirement |
+|---|---|
+| **Finalized** | The segment's final transcript has settled — a live partial is never eligible. |
+| **Unambiguous** | Book, chapter and verse were all resolved; a whole chapter is too broad to put on the wall unasked. |
+| **Passage exists** | The selected translation actually returned the verses. |
+| **Explicit intent** | An explicit reference was *spoken* — quotes and contextual matches never qualify. |
+| **No conflict** | No competing candidate for the same moment. |
+| **No repeat** | The hearing is not a repeat; repeat hearings are folded into one card. |
+| **Enabled** | Auto-projection is on and not paused (`F9`). |
+| **High confidence** | The detection is in the high band. |
+
+That is eight conditions a verse must clear before Zopresent would put it on
+the wall without your hand — and one failure of any of them keeps it in the
+queue. `F9` pauses auto-projection, `F12` still kills everything, and
+contextual references are exempt by design: they always wait for you.
 
 Until the detector is scored against real labelled audio, the queue is the
 workflow. It costs one keystroke and buys you certainty.

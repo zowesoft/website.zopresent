@@ -34,6 +34,24 @@ These are the defaults. Every action can be rebound in
   auto-projection (off by default); pauses it without disabling detection.
   With auto-projection off, F9 has nothing to pause.
 
+## The menus
+
+The studio's menu bar carries the same actions as the toolbar, plus a few
+that only live there:
+
+| Menu | Action |
+|---|---|
+| File → New service | `Ctrl+N` — start a fresh service |
+| File → Backup now | Write a database backup immediately |
+| Live → Project live | Send the preview to the audience display |
+| Live → Clear display | Blank the audience display — a deliberate, recorded action |
+| Live → Emergency disable detection | The `F12` switch, without the keyboard |
+| View → Toggle fullscreen | `F11` |
+
+**Clear display** is worth knowing: it is an explicit action, recorded in the
+decision history like any projection, so a cleared screen is one click from
+being restored.
+
 ## Design principles
 
 - **Preview before air.** Nothing reaches the audience display without a

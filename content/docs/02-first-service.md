@@ -21,6 +21,14 @@ mis-click can never project the wrong slide mid-service.
 If no second display is connected, the media editor doubles as the player so
 you can still rehearse on one screen.
 
+## More than one service
+
+The **home page** lists your saved services — the active one first — and
+**New service** (or `Ctrl+N`, or File → New Service) starts another one.
+Each service keeps its own running order and its own decision history, so
+last Sunday's projections never blur into this Sunday's. Pick a service to
+continue it.
+
 ## Building the order
 
 Add items to the service order from the toolbar:
