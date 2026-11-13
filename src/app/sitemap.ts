@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { docs, nav, posts } from "@/lib/content";
+import { docs } from "@/lib/docs";
+import { nav, posts } from "@/lib/content";
 
 const base = "https://zopresent.vercel.app";
 

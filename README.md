@@ -30,6 +30,10 @@ pnpm lint       # eslint
 - `src/lib/content.ts` — site copy: product blurb, features, downloads
   (release asset names and [sizes](https://github.com/zowesoft/zopresent/releases)),
   docs and blog posts
+- `content/docs/*.md` — the documentation guides, as plain markdown with a
+  small frontmatter header (title, summary, section, order). The docs pages
+  render from these; `/docs/<guide>/markdown` serves each file raw and
+  `/llms.txt` indexes them for AI tools
 - `src/app/opengraph-image.png` / `twitter-image.png` — the link-preview cards
   (1200x630, the Zopresent mark on the navy gradient)
 - `public/` — screenshots and static assets
