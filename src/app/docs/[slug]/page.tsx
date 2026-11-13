@@ -3,10 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { docsBySection, getDoc } from "@/lib/docs";
+import { docs, getDoc } from "@/lib/docs";
 
 export function generateStaticParams() {
-  return docsBySection().flatMap((g) => g.docs.map((d) => ({ slug: d.slug })));
+  return docs.map((d) => ({ slug: d.slug }));
 }
 
 export async function generateMetadata(
@@ -23,8 +23,13 @@ export default async function DocPage(props: PageProps<"/docs/[slug]">) {
   const doc = getDoc(slug);
   if (!doc) notFound();
 
+  // Neighbours in reading order, across section boundaries, like a book.
+  const index = docs.findIndex((d) => d.slug === doc.slug);
+  const prev = index > 0 ? docs[index - 1] : null;
+  const next = index < docs.length - 1 ? docs[index + 1] : null;
+
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+    <div className="py-16">
       <nav className="text-sm text-muted">
         <Link href="/docs" className="hover:text-ink">
           Docs
@@ -50,33 +55,41 @@ export default async function DocPage(props: PageProps<"/docs/[slug]">) {
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{doc.body}</ReactMarkdown>
       </article>
 
-      {/* On-page index of the other guides, grouped like the docs home */}
-      <nav className="mt-14 border-t border-border pt-8">
-        <p className="text-sm font-medium uppercase tracking-widest text-muted">
-          All guides
-        </p>
-        {docsBySection().map(({ section, docs }) => (
-          <div key={section} className="mt-6">
-            <p className="text-xs font-medium uppercase tracking-widest text-amber">
-              {section}
+      {/* Reading order: the previous and next guide in the manual */}
+      <nav
+        aria-label="Reading order"
+        className="mt-14 grid gap-3 border-t border-border pt-8 sm:grid-cols-2"
+      >
+        {prev ? (
+          <Link
+            href={`/docs/${prev.slug}`}
+            className="group rounded-xl border border-border bg-surface p-5 transition-colors hover:border-blue"
+          >
+            <p className="text-xs font-medium uppercase tracking-widest text-muted">
+              ← Previous
             </p>
-            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-              {docs
-                .filter((d) => d.slug !== doc.slug)
-                .map((d) => (
-                  <li key={d.slug}>
-                    <Link
-                      href={`/docs/${d.slug}`}
-                      className="block rounded-lg border border-border bg-surface px-4 py-3 text-sm transition-colors hover:border-blue"
-                    >
-                      <span className="font-medium">{d.title}</span>
-                      <span className="mt-1 block text-muted">{d.summary}</span>
-                    </Link>
-                  </li>
-                ))}
-            </ul>
-          </div>
-        ))}
+            <p className="mt-1.5 font-semibold text-ink">{prev.title}</p>
+            <p className="mt-0.5 text-xs text-muted">
+              {prev.section} · {prev.summary}
+            </p>
+          </Link>
+        ) : (
+          <span aria-hidden className="hidden sm:block" />
+        )}
+        {next && (
+          <Link
+            href={`/docs/${next.slug}`}
+            className="group rounded-xl border border-border bg-surface p-5 text-right transition-colors hover:border-blue sm:col-start-2"
+          >
+            <p className="text-xs font-medium uppercase tracking-widest text-muted">
+              Next →
+            </p>
+            <p className="mt-1.5 font-semibold text-ink">{next.title}</p>
+            <p className="mt-0.5 text-xs text-muted">
+              {next.section} · {next.summary}
+            </p>
+          </Link>
+        )}
       </nav>
     </div>
   );

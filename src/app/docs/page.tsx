@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function DocsPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+    <div className="py-16">
       <h1 className="text-4xl font-bold tracking-tight">Documentation</h1>
       <p className="mt-4 max-w-2xl text-muted">
         Everything you need to run Zopresent in a service, from first install
